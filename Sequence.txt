@@ -1,0 +1,12 @@
+Migartion of table
+------------------
+-> php artisan make:migration create_admin_table
+-> php artisan make:migration create_companies_table
+-> php artisan make:migration create_employees_table
+
+Open database/migration and find all files
+-> Modify up function and write your column name to be update
+
+after saving execute : php artisan migrate
+
+
