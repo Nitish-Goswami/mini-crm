@@ -33,6 +33,24 @@ $this->call(FirstAdminSeeder::class);
 
 after saving execute : php artisan db:seed
 
+(4)
+execute : 
+-> php artisan make:model Company
+-> php artisan make:model Employee
+
+Open app/models/ and find all files
+
+(5) 
+Make service provider for Company and Employee using Repository Pattern
+-> php artisan make:provider RepositoryServiceProvider
+
+(6)Create Request class
+php artisan make:request UserValidation
+php artisan make:request EmployeeDataValidation
+php artisan make:request CompanyDataValidation
+
+validation added
+
 
 
 
