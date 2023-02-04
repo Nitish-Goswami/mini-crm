@@ -1,4 +1,12 @@
-Migartion of table
+(1) Store the company's logos in the storage/app/public folder and make them accessible to the public
+ -----------------------------------------------
+-> Logo added in storage/app/public folder
+-> execute : php artisan storage:link
+now  logo is accessable at "http://your.domain/storage/logo.png"
+
+
+
+(2) Migartion of table
 ------------------
 -> php artisan make:migration create_admin_table
 -> php artisan make:migration create_companies_table
@@ -8,5 +16,24 @@ Open database/migration and find all files
 -> Modify up function and write your column name to be update
 
 after saving execute : php artisan migrate
+
+
+
+(3) Use database seeds to create the first user with email admin@admin.com and password “password”
+----------------------------------------
+execute : php artisan make:seeder FirstAdminSeeder
+Open file FirstAdminSeeder.php and write in run function as following:
+ DB::table('admin')->insert([
+            'email' => 'admin@admin.com',
+            'password' => 'password',
+]);
+
+Open DatabaseSeeder.php and write in run as following
+$this->call(FirstAdminSeeder::class);
+
+after saving execute : php artisan db:seed
+
+
+
 
 
